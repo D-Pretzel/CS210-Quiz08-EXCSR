@@ -1,6 +1,6 @@
 /** quiz08.c
 * ===========================================================
-*    Name: 
+*    Name:
 * Section:
 * Purpose: Quiz 8
 * ===========================================================
@@ -18,14 +18,17 @@ int main(void){
     scanf("%d", &numCars);
 
     // Part 3:  Dynamically Create Your Array Here
-    
+    Car* carInventory = (Car*)malloc(numCars * sizeof(Car));
 
     // Part 3:  Uncomment this line when you are told to do so in the instructions
-    // int numCarsLoaded = loadCarInventory(carInventory, numCars);
+    int numCarsLoaded = loadCarInventory(carInventory, numCars);
 
 
     // Part 4:  YOUR CODE GOES HERE
-    
+    displayCar(carInventory[0]);
+    displayCar(carInventory[numCarsLoaded - 1]);
+
+    free(carInventory);
 
     return 0;
 
